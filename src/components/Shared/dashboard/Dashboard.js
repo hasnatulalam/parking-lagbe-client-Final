@@ -41,8 +41,22 @@ const Dashboard = () => {
                         </div>
                         <h3 className='text-center font-semibold'>{state?.isUser?.name}</h3>
                     <h3 className='text-center text-xs py-2'>{state?.isUser?.email}</h3>
-                     <h3 className='text-center text-xs py-2'>{state?.isUser?.role}</h3> 
-                  
+                    {state?.isUser.role === "Driver" ? (
+                     <h3 className='text-center text-xs py-2'>Driver</h3> 
+                    ):(
+                        <>
+                      
+                        {state?.isUser.isAdmin === true && state?.isUser.role === "Owner" ? (
+                            <h3 className='text-center text-xs py-2'>  Admin</h3>
+                         ):(
+                            <h3 className='text-center text-xs py-2'>  Owner</h3>
+                         )
+                         
+                         }
+                           </>
+                    )}
+                    
+                   
                         <div className="divider mb-0"></div>
 
                         {/* <!-- Sidebar content here --> */}
@@ -53,6 +67,9 @@ const Dashboard = () => {
                             </li>
                             <li>
                                 <Link className='hover:text-primary active:text-primary focus:text-primary px-1' to="/dashboard/review">My Review</Link>
+                            </li>
+                            <li>
+                                <Link className='hover:text-primary active:text-primary focus:text-primary px-1' to="/dashboard/complain">Complain</Link>
                             </li>
                            
                         </ul>
@@ -68,6 +85,9 @@ const Dashboard = () => {
                                 <li>
                                     <Link className='hover:text-primary active:text-primary focus:text-primary px-1' to="/dashboard/review">My Review</Link>
                                 </li>
+                                <li>
+                                <Link className='hover:text-primary active:text-primary focus:text-primary px-1' to="/dashboard/complain">Complain</Link>
+                            </li>
                             </ul>
                         )}
                         {state?.isUser.isAdmin === true && state?.isUser.role === "Owner" && (
@@ -85,9 +105,9 @@ const Dashboard = () => {
                                 <li>
                                     <Link className='hover:text-primary active:text-primary focus:text-primary px-1' to="/dashboard/makeAdmin">Make Admin</Link>
                                 </li>
-                                <li>
-                                    <Link className='hover:text-primary active:text-primary focus:text-primary px-1' to="/dashboard/income">All Income</Link>
-                                </li>
+                                 <li>
+                                    <Link className='hover:text-primary active:text-primary focus:text-primary px-1' to="/dashboard/allcomplain">All Complain</Link>
+                                </li> 
                             </ul>
                         )}
 

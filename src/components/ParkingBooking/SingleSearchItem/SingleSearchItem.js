@@ -133,12 +133,12 @@ const SingleSearchItem = () => {
             </div>
             <div className="hotelDetails flex flex-col justify-center max-w-md mx-auto text-center">
               <div className="hotelDetailsPrice">
-                <h1 className="text-secondary">Perfect for a {days}-night stay!</h1>
+                <h1 className="text-secondary">Perfect for a {days}-day parking!</h1>
                 <span>
                   Located in the real heart of Krakow, this property has an
                   excellent location score of 9.8!
                 </span>
-                <h2><b>${days * data.cheapestPrice * options.sloots}</b> ({days}{" "}nights) </h2>
+                <h2><b>${days * data.cheapestPrice * options.slot}</b> ({days}{" "}day) </h2>
                 <button onClick={handleClick} className="btn btn-primary lg:w-2/3 font-medium leading-5 mx-auto">Reserve or Booking Parking Right Now!</button>
               </div>
             </div>

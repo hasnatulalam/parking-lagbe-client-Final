@@ -22,7 +22,7 @@ const Reviews = () => {
     return (
         <section id='reviews' className='px-5 md:px-10 lg:px-16 py-10 md:pb-20'>
             <div className='max-w-full text-center'>
-                <h3 className="text-md lg:text-md lg:text-2xl font-semibold mt-5 text-primary">Feedback from our Customers</h3>
+                <h3 className="text-md lg:text-md lg:text-2xl font-semibold mt-5 text-primary">Feedback From Our Customers</h3>
                 <h3 className="text-3xl font-semibold mt-3 mb-3 md:mb-12">TESTIMONIALS</h3>
             </div>
             {/* treatments cards starts */}

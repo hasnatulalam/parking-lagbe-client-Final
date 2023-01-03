@@ -17,9 +17,9 @@ const Footer = () => {
           </div>
           <div>
             <span className="footer-title text-lg text-primary mb-3 opacity-100">Explore Us</span>
-            <Link to='/' className="link link-hover font-semibold text-white">Go Home</Link>
-            <Link to='/' className="link link-hover font-semibold text-white">Departments</Link>
-            <Link to='/blogs' className="link link-hover font-semibold text-white">Read our Blog</Link>
+            <Link to='/' className="link link-hover font-semibold text-white">About</Link>
+            <Link to='/about' className="link link-hover font-semibold text-white">Contact Us</Link>
+            <Link to='/contact' className="link link-hover font-semibold text-white">Contact Us</Link>
             <Link to='/#news-later' className="link link-hover font-semibold text-white">News Later</Link>
           </div>
           <div>

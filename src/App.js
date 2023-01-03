@@ -27,6 +27,8 @@ import Income from "./components/Admin/AllIncome/Income"
  import Map from "./components/Home/Map/Map"  
  import { ChakraProvider, theme } from '@chakra-ui/react'
 import About from "./components/Home/About/About";
+import UserComplain from "./components/User/UserComplain/UserComplain";
+import Complains from "./components/Admin/All Complain/Compalins/Complains";
 
 
 
@@ -35,6 +37,9 @@ import About from "./components/Home/About/About";
 
 
 function App() {
+  /* const [state] = useContext(UserContext);
+
+     const { isUser } = useContext(UserContext); */
  
   return (
     <div>
@@ -53,7 +58,7 @@ function App() {
         <Route path="/Parking" element={<List />} />
         <Route path="/Parking/:id" element={<SingleSearchItem></SingleSearchItem>}/>
         <Route path="/pay" element={ <StripePayment />} />
-        
+        <Route path="allcomplain" element={ <Complains />} />
         
          
 
@@ -65,6 +70,7 @@ function App() {
      
           <Route index element={<WelcomeUser></WelcomeUser>} />
           <Route path="review" element={<UserReview />} />
+          <Route path="complain" element={<UserComplain />} />
           <Route path="booking" element={<MyBooking />} />
           <Route path="addParking" element={<NewParking />} />
           <Route path="newParkingSpace" element={<NewParkingSpace />} />
@@ -73,6 +79,7 @@ function App() {
           <Route path="makeAdmin" element={<MakeAdmin />} />
           <Route path="AllParking" element={<AllParking />} />
           <Route path="AllParkingSlot" element={<AllParkingSlot />} />
+          <Route path="allcomplain" element={ <Complains />} />
           <Route path="income" element={<Income />} />
         </Route>
         <Route path="/reset-password" element={<ForgetPassword />} />

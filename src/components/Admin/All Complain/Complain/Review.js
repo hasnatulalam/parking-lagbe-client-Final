@@ -9,7 +9,7 @@ import quotePng from '../../../assets/images/quote.png';
 const Review = (props) => {
 
 
-    const { name, rating, description } = props.collectreview
+    const {  description } = props.collectreview
 
 
     return (

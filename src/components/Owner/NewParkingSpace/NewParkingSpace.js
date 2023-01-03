@@ -52,10 +52,10 @@ const NewParkingSpace = () => {
                 </div>
               ))}
               <div className="formInput">
-                <label>Rooms</label>
+                <label>Slots</label>
                 <textarea
                   onChange={(e) => setSlots(e.target.value)}
-                  placeholder="give comma between room numbers."
+                  placeholder="give comma between slot numbers."
                 />
               </div>
               <div className="formInput">

@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   dates: [],
   options: {
     
-    sloots: undefined,
+    slot: undefined,
     count: 0
   },
 };

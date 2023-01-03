@@ -34,7 +34,7 @@ const Header = ({ type }) => {
   ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
-    sloots: 1,
+    slot: 1,
   });
 
   const navigate = useNavigate();
@@ -176,7 +176,7 @@ const Header = ({ type }) => {
                     <span
                       onClick={() => setOpenOptions(!openOptions)}
                       className="headerSearchText text-lg"
-                    >{` ${options.sloots} sloots`}</span>
+                    >{` ${options.slot} slot`}</span>
                     {openOptions && (
                       <div className="options font-semibold">
                         <div className="optionItem">
@@ -185,16 +185,16 @@ const Header = ({ type }) => {
                             <button
                               disabled={options.room <= 1}
                               className="optionCounterButton"
-                              onClick={() => handleOption("sloots", "d")}
+                              onClick={() => handleOption("slot", "d")}
                             >
                               -
                             </button>
                             <span className="optionCounterNumber">
-                              {options.sloots}
+                              {options.slot}
                             </span>
                             <button
                               className="optionCounterButton"
-                              onClick={() => handleOption("sloots", "i")}
+                              onClick={() => handleOption("slot", "i")}
                             >
                               +
                             </button>
