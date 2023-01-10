@@ -12,10 +12,12 @@ const Reviews = () => {
     const [collectreviews, setCollectReviews] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:9000/api/review/collectreviews")
+        fetch("http://localhost:8000/api/review/collectreviews")
             .then((res) => res.json())
             .then((data) => setCollectReviews(data));
     }, []);
+
+   
 
 
 
@@ -27,14 +29,16 @@ const Reviews = () => {
             </div>
             {/* treatments cards starts */}
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8 '>
+           
                 {
-                    collectreviews.slice(0, 3).map(collectreview =>
+                    collectreviews.slice(0, 12).map(collectreview =>
                         <Review
                             key={collectreview._id}
                             collectreview={collectreview}
                         ></Review>
                     )
                 }
+               
             </div>
         </section>
     );

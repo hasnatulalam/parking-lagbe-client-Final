@@ -18,7 +18,7 @@ const ChangePassword = () => {
     e.preventDefault();
 
     const res = await axios.post(
-      "http://localhost:9000/api/auth/forget-password/${id}/${token}",
+      "http://localhost:8000/api/auth/forget-password/${id}/${token}",
       input
     );
     if (res.status === 200) {

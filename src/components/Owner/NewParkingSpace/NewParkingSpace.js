@@ -11,7 +11,7 @@ const NewParkingSpace = () => {
   const [hotelId, setHotelId] = useState(undefined);
   const [slots, setSlots] = useState([]);
 
-  const { data, loading, error } = useFetch("http://localhost:9000/api/parking/allParkings");
+  const { data, loading, error } = useFetch("http://localhost:8000/api/parking/allParkings");
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -21,7 +21,7 @@ const NewParkingSpace = () => {
     e.preventDefault();
     const slotNumbers = slots.split(",").map((slot) => ({ number: slot }));
     try {
-      await axios.post(`http://localhost:9000/api/parkingSlot/createParkingSlot/${hotelId}`, { ...info, slotNumbers });
+      await axios.post(`http://localhost:8000/api/parkingSlot/createParkingSlot/${hotelId}`, { ...info, slotNumbers });
     } catch (err) {
       console.log(err);
     }

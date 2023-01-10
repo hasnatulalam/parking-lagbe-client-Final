@@ -9,10 +9,12 @@ import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import axios from "axios";
 const CustomerReview = () => {
 
-  const [rating, setRating] = useState()
-  const handleChange = (event) => {
+  const [rating,setRating]=useState()
+  const handleChange = (event) =>{
     setRating(event.target.value);
   }
+
+  
   const [description, setDescription] = useState("")
   const handleValue = (event) => {
     setDescription(event.target.value);
@@ -23,10 +25,11 @@ const CustomerReview = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
 
 
     try {
-      await axios.post("http://localhost:9000/api/review/addreview", { rating, description },);
+      await axios.post("http://localhost:8000/api/review/addreview", { rating, description },);
     } catch (err) {
       console.log(err);
     }
@@ -60,6 +63,9 @@ const CustomerReview = () => {
                     value={rating}
                     onChange={handleChange}
                   >
+                  
+                    
+                    
                     <option value="1">1</option>
                     <option value="1.5">1.5</option>
                     <option value="2">2</option>
@@ -71,6 +77,8 @@ const CustomerReview = () => {
                     <option value="5">5</option>
                   </select>
                 </Form.Group>
+                </Row>
+                <Row>
                 <textarea
 
                   required

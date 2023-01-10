@@ -28,7 +28,7 @@ const StripePayment = () => {
 
     useEffect(() => {
         const getClientSecret = async () => {
-            const { data } = await axios.post('http://localhost:9000/api/payment/create-payment-intent', {amount})
+            const { data } = await axios.post('http://localhost:8000/api/payment/create-payment-intent', {amount})
             setClientSecret(data.clientSecret)
         }
         getClientSecret()
@@ -39,6 +39,9 @@ const StripePayment = () => {
                 <div>
                     <h2 className='text-2xl font-bold'>Hello {name},</h2>
                     <p><span className='text-4xl font-semibold'>${amount}</span> Will be deducted</p>
+                    
+                   
+
                 </div>
                 { 
                     clientSecret && 
@@ -92,7 +95,7 @@ const CheckoutForm = ({ alias, slots, amount, user, date, location, selectedRoom
             setCardErr(intentErr?.message)
             setPaymentLoading(false)
         } else {
-            const {data} = await axios.post('http://localhost:9000/api/payment', {trxId: paymentIntent.id, user, date, location, slots})
+            const {data} = await axios.post('http://localhost:8000/api/payment', {trxId: paymentIntent.id, user, date, location, slots})
             if(data?.success){
                 await Promise.all(selectedRooms.map((parkingSlotId) => 
                         axios.put(`http://localhost:9000/api/parkingSlot/availability/${parkingSlotId}`, {

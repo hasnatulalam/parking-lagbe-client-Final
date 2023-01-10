@@ -13,7 +13,7 @@ const AllUsers = () => {
 
   const [list, setList] = useState([]);
 
-  const { data, loading, error } = useFetch("http://localhost:9000/api/users/getallusers");
+  const { data, loading, error } = useFetch("http://localhost:8000/api/users/getallusers");
 
   useEffect(() => {
     setList(data);
@@ -22,7 +22,7 @@ const AllUsers = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:9000/api/users/deleteuser/${id}`);
+      await axios.delete(`http://localhost:8000/api/users/deleteuser/${id}`);
       setList(list.filter((item) => item._id !== id));
 
     } catch (err) { }

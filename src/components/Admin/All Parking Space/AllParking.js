@@ -22,7 +22,7 @@ const AllParking = () => {
 
  
   
-   const { data, loading, error } = useFetch("http://localhost:9000/api/parking/AllParkings");  
+   const { data, loading, error } = useFetch("http://localhost:8000/api/parking/AllParkings");  
  
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const AllParking = () => {
 
   const handleDelete = async (id) => {
       try {
-       await axios.delete(`http://localhost:9000/api/parking/delete/${id}`);
+       await axios.delete(`http://localhost:8000/api/parking/delete/${id}`);
        setList(list.filter((item) => item._id !== id)); 
       
     } catch (err) {}   

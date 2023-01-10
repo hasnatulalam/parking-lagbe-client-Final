@@ -13,7 +13,7 @@ const MyBooking = () => {
 
     useEffect(() => {
       const getUserPaymentInfos = async () => {
-        const {data} = await axios.get(`http://localhost:9000/api/payment/user?id=${state?.isUser?._id}`)
+        const {data} = await axios.get(`http://localhost:8000/api/payment/user?id=${state?.isUser?._id}`)
         if(data){
           setUserBookings(data)
         }

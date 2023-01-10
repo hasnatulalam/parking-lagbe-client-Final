@@ -23,7 +23,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:9000/api/auth/users/register", { name, email, password, role });
+      const response = await axios.post("http://localhost:8000/api/auth/users/register", { name, email, password, role });
       if (response.status === 201) {
         alert(response.data.message);
         navigate("/login");

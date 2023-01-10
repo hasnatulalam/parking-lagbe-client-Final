@@ -12,7 +12,7 @@ const Complains = () => {
     const [collectcomplains, setCollectComplains] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:9000/api/complain/collectcomplains")
+        fetch("http://localhost:8000/api/complain/collectcomplains")
             .then((res) => res.json())
             .then((data) => setCollectComplains(data));
     }, []);

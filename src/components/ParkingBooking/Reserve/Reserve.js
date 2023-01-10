@@ -11,7 +11,7 @@ const Reserve = ({ setOpen, parkingSlotId }) => {
   const [selectedSlots, setSelectedSlots] = useState([])
   const [selectedPlace, setSelectedPlace] = useState('')
   
-  const { data, loading, error } = useFetch(`http://localhost:9000/api/parking/allParkings/parkingSlot/${parkingSlotId}`);
+  const { data, loading, error } = useFetch(`http://localhost:8000/api/parking/allParkings/parkingSlot/${parkingSlotId}`);
   const { dates } = useContext(SearchContext);
 
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;

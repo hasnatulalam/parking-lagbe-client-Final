@@ -13,7 +13,7 @@ const NewParking = () => {
   const [slots, setSlots] = useState([]);
   const navigate = useNavigate();
 
-  const { data, loading, error } = useFetch("http://localhost:9000/api/parkingSlot/allParkingSlot");
+  const { data, loading, error } = useFetch("http://localhost:8000/api/parkingSlot/allParkingSlot");
 
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -55,7 +55,7 @@ const NewParking = () => {
         photos: list,
       }
 
-      await axios.post("http://localhost:9000/api/parking/addparking", newParking);
+      await axios.post("http://localhost:8000/api/parking/addparking", newParking);
 
     } catch (err) { console.log(err) }
 

@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:9000/api/auth/users/login", input,)
+      const response = await axios.post("http://localhost:8000/api/auth/users/login", input,)
 
 
 

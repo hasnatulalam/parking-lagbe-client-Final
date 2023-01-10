@@ -22,7 +22,7 @@ import useFetch from "../../hooks/useFetch";
 
 
 const Header = ({ type }) => {
-  const { data: allParkingAreas } = useFetch("http://localhost:9000/api/parking/allParkings");
+  const { data: allParkingAreas } = useFetch("http://localhost:8000/api/parking/allParkings");
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [dates, setDates] = useState([
@@ -130,8 +130,8 @@ const Header = ({ type }) => {
                   We have the best deals for parking lots!
                 </h1>
                 <p className="my-5 text-xl text-white">
-                  Get rewarded for your travels – unlock instant savings of 10% or
-                  more with a free Lamabooking account.
+                Get rewarded for your parkings– unlock instant savings of 10% or
+                  more with a free ParkingLagbe account.
                 </p>
                 {/* <p>A lifetime of discounts? It's Genius.</p> */}
               </div>

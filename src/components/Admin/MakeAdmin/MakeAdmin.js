@@ -9,13 +9,13 @@ const MakeAdmin = () => {
   const [status, setStatus] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:9000/api/users/getallusers")
+    fetch("http://localhost:8000/api/users/getallusers")
       .then((res) => res.json())
       .then((data) => setMakeAdmin(data));
   }, [status]);
 
   const handleUpdate = (id) => {
-    const url = `http://localhost:9000/api/users/update/${id}`;
+    const url = `http://localhost:8000/api/users/update/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.4.6",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.11.0",
@@ -25,7 +27,10 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
     "react-spinners": "^0.13.7",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.6",
     "sweetalert2": "^11.6.16",
     "web-vitals": "^2.1.4"
   },

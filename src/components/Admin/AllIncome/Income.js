@@ -11,7 +11,7 @@ export default function FeaturedInfo() {
   useEffect(() => {
     const getIncome = async () => {
       try {
-        const res = await axios.get("http://localhost:9000/api/payment/income");
+        const res = await axios.get("http://localhost:8000/api/payment/income");
         setIncome(res.data);
         setPerc((res.data[1].total * 100) / res.data[0].total - 100);
       } catch {}

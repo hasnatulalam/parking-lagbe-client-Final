@@ -25,7 +25,7 @@ const SingleSearchItem = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const { data, loading, error } = useFetch(`http://localhost:9000/api/parking/singleParking/${id}`);
+  const { data, loading, error } = useFetch(`http://localhost:8000/api/parking/singleParking/${id}`);
   const [state, setState] = useContext(UserContext)
   const navigate = useNavigate();
 

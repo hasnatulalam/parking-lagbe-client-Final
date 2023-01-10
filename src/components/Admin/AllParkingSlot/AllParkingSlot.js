@@ -14,7 +14,7 @@ const AllParkingSlot = () => {
 
  
   
-   const { data, loading, error } = useFetch("http://localhost:9000/api/parkingSlot/allParkingSlot");  
+   const { data, loading, error } = useFetch("http://localhost:8000/api/parkingSlot/allParkingSlot");  
  
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const AllParkingSlot = () => {
 
   const handleDelete = async (id) => {
       try {
-       await axios.delete(`http://localhost:9000/api/parkingSlot/deleteParkingSlots/${id}`);
+       await axios.delete(`http://localhost:8000/api/parkingSlot/deleteParkingSlots/${id}`);
       setList(list.filter((item) => item._id !== id));
       
     } catch (err) {}   

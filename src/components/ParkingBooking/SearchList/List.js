@@ -27,7 +27,7 @@ const List = () => {
   useEffect(() => {
     const getRelevantSearchArea = async () => {
       setDataLoading(true)
-        const {data} = await axios.get(`http://localhost:9000/api/parking/AllParkings/${destination}?min=${min}&&max=${max}`)
+        const {data} = await axios.get(`http://localhost:8000/api/parking/AllParkings/${destination}?min=${min}&&max=${max}`)
         if(data.length){
           setMatchedAreas(data)
           setDataLoading(false)

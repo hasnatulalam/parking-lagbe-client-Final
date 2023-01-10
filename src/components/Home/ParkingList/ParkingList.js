@@ -2,7 +2,7 @@ import useFetch from "../../hooks/useFetch";
 import "./ParkingList.css";
 
 const ParkingList = () => {
-  const { data, loading, error } = useFetch("http://localhost:9000/api/parking/allParkings/countByType");
+  const { data, loading, error } = useFetch("http://localhost:8000/api/parking/allParkings/countByType");
 
   const images = [
     "https://i.ibb.co/bvDnSp8/images.jpg",
