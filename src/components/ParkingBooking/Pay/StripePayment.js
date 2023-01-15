@@ -39,9 +39,6 @@ const StripePayment = () => {
                 <div>
                     <h2 className='text-2xl font-bold'>Hello {name},</h2>
                     <p><span className='text-4xl font-semibold'>${amount}</span> Will be deducted</p>
-                    
-                   
-
                 </div>
                 { 
                     clientSecret && 
@@ -98,7 +95,7 @@ const CheckoutForm = ({ alias, slots, amount, user, date, location, selectedRoom
             const {data} = await axios.post('http://localhost:8000/api/payment', {trxId: paymentIntent.id, user, date, location, slots})
             if(data?.success){
                 await Promise.all(selectedRooms.map((parkingSlotId) => 
-                        axios.put(`http://localhost:9000/api/parkingSlot/availability/${parkingSlotId}`, {
+                        axios.put(`http://localhost:8000/api/parkingSlot/availability/${parkingSlotId}`, {
                         dates: alldates,
                       })));
                 setTransactionId(paymentIntent.id)

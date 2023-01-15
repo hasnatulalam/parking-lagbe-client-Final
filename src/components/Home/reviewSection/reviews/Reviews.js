@@ -31,7 +31,7 @@ const Reviews = () => {
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8 '>
            
                 {
-                    collectreviews.slice(0, 12).map(collectreview =>
+                    collectreviews.slice(0, 3).map(collectreview =>
                         <Review
                             key={collectreview._id}
                             collectreview={collectreview}

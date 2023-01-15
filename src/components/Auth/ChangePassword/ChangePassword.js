@@ -10,22 +10,25 @@ const ChangePassword = () => {
   const { id, token } = useParams();
   const navigate = useNavigate();
   const [input, setInput] = useState({
-    newPassword: "",
-    confirmPassword: "",
+    newpassword: "",
+    confirmpassword: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await axios.post(
-      "http://localhost:8000/api/auth/forget-password/${id}/${token}",
-      input
-    );
-    if (res.status === 200) {
-      alert("password changed Successfully");
-      navigate("/login");
+    try {
+      const res = await axios.post(`http://localhost:8000/api/auth/forget-password/${id}/${token}`,
+      input);
+      if (res.status === 200) {
+        alert("password changed Successfully");
+        navigate("/login");
+      }
+    } catch (error) {
+      alert(error.response.data.message);
     }
   };
+  
   return (
 
     <div className="py-10">
@@ -46,9 +49,10 @@ const ChangePassword = () => {
 
                    className="input input-bordered w-full max-w-full focus:outline-none"
                    type="password"
-                   name="password"
-                   id="password"
+                   name="newpassword"
+                  
                    placeholder="Your Password"
+                   value={input.newpassword}
                    onChange={(e) =>
                      setInput({
                        ...input,
@@ -63,9 +67,10 @@ const ChangePassword = () => {
 
                   className="input input-bordered w-full max-w-full focus:outline-none"
                   type="password"
-                  name="password"
-                  id="password"
+                  name="confirmpassword"
+                 
                   placeholder="Your  confirmPassword  Password"
+                  value={input.confirmpassword}
                   onChange={(e) =>
                     setInput({
                       ...input,
